@@ -1,0 +1,412 @@
+/***
+		The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+		GitHub page: https://github.com/elad2412/the-new-css-reset
+	***/
+
+/*
+		Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+		- The "symbol *" part is to solve Firefox SVG sprite bug
+	 */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the  text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+           display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+           - fix for the content editable attribute will work properly.
+           - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+
+body {
+    background: linear-gradient(to bottom left, transparent, #79287E 150%),
+        linear-gradient(to right, transparent, #0F72BA 150%);
+    background-size: contain;
+    background-color: black;
+    background-repeat: no-repeat;
+
+}
+
+/*------------------------------------------------------------------------------  header  -------------------------------------------------------------------------------------------*/
+header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 42px;
+    left: 110px;
+    height: 65px;
+    width: 90%;
+    justify-content: space-between;
+    /* background-color: grey; */
+}
+
+/* #svg_planete{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 409px;
+} */
+
+#home_button {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+    right: 110px;
+    /* background-color: grey; */
+}
+
+.logo {
+    height: 60px;
+    width: 88px;
+    background-image: url("image/logo.png");
+}
+
+.button_creation {
+    position: relative;
+        top: 25%;
+    width: 158px;
+    height: 48px;
+    background-image: url(image/button_creation_hover.png);
+}
+
+.button_contact {
+    position: relative;
+    top: 25%;
+    width: 153px;
+    height: 48px;
+    background-image: url(image/button_contact_default.png);
+}
+
+.button_contact:hover {
+    background-image: url(image/button_contact_hover.png);
+}
+
+/*---------------------------------------------------------------------------------Home project--------------------------------------------------------------------------------*/
+
+#homeProject {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#svg {
+    height: 410px;
+    width: 100%;
+}
+
+h1 {
+    font-family: "Trispace", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 144px;
+    text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+    color: rgba(217, 217, 217, 1);
+}
+h2{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 48px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+p {
+    font-family: "Trispace", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 32px;
+    color: rgba(217, 217, 217, 1);
+}
+
+.Texte {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 10vh;
+    border-radius: 20px;
+    background-color: rgb(34, 33, 33);
+
+}
+
+.texte {
+    margin: 10vh;
+    /* margin-right: 10vw;
+    margin-top: 10vh; */
+}
+
+#name_projet {
+    align-self: center;
+}
+
+#competence_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+#logo_competence {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+
+}
+
+#logo_HTML {
+    background-image: url(image/logo_HTML.png);
+    background-size: cover;
+    height: 78px;
+    width: 78px;
+}
+
+#logo_CSS {
+    background-image: url(image/logo_CSS.png);
+    background-size: cover;
+    height: 78px;
+    width: 78px;
+}
+
+#logo_JS {
+    background-image: url(image/logo_JS.png);
+    background-size: cover;
+    height: 78px;
+    width: 78px;
+}
+
+#button_TesterLeProjet {
+
+    height: 74px;
+    width: 260px;
+    background-image: url(image/button_testerLeProjet_default.png);
+    background-size: cover;
+}
+
+#button_TesterLeProjet:hover {
+    background-image: url(image/button_testerLeProjet_hover.png);
+    background-size: cover;
+}
+
+#img1_2 {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#img1 {
+    width: 50vw;
+    height: 96vh;
+    background-image: url(../../exemple/854de427f93e6711c607ce93b642b843.jpg);
+    background-size: cover;
+}
+
+#img2 {
+    width: 50vw;
+    height: 96vh;
+    background-image: url(../../exemple/820ebdf50b65d8ebfffbf0b209402a3e.jpg);
+    background-size: cover;
+}
+#sec_img3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#img3{
+    width: 39vw;
+    height: 59vh;
+    background-image: url(../../exemple/1a74d1cb9f772119a06f4d77ef7939d0.jpg);
+    background-size: cover;
+}
+/* --------------------------------------------------------------------------------  autres projects  ------------------------------------------------------------------------------------ */
+
+#title_autresProjets{
+    align-self: flex-start;
+	position: relative;
+    left: 10vh;
+}
+#mesCreation {
+    margin: 0 auto; /* Centrer horizontalement */
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#projets{
+	margin-top: 20vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 70vw;
+	height: auto;
+
+}
+.prj{
+	margin-right: 4.5vw;
+	margin-left: 4.5vw;
+	margin-bottom: 13vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 452px;
+	width: 440px;
+}
+.img_prj{
+	max-width: 429px;
+	max-height: 396px;
+	-webkit-filter: grayscale(1);
+}
+.img_prj:hover{
+	-webkit-filter: grayscale(0);
+}
+h4{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 32px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+
+
+/*---------------------------------------------------------------------------------footer--------------------------------------------------------------------------------*/
+
+footer {
+    height: 259px;
+    background-color: rgba(60, 60, 60);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.p_footer{
+    font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 24px;
+}
+#info_footer {
+    position: relative;
+    left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+}
+
+#logo_footer {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30vw;
+}
+
+#logoLinkedin {
+    margin-left: 3vw;
+    height: 72px;
+    width: 72px;
+    background-image: url(image/logo_linkedin_default.png);
+}
+
+#logoMail {
+    margin-left: 3vw;
+    height: 72px;
+    width: 72px;
+    background-image: url(image/logo_mail_default.png);
+}
+
+#logoLinkedin:hover {
+    background-image: url(image/logo_linkedin_hover.png);
+}
+
+#logoMail:hover {
+    background-image: url(image/logo_mail_hover.png);
+}

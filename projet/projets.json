@@ -1,0 +1,10 @@
+{
+    "id":"a1b2c3",
+    "nom":"death by ai",
+    "badges":"HTML,CSS,JS",
+    "img1":"url(../deathByAi/acceuil.png)",
+    "img2":"url(../deathByAi/ecriture-solution.png)",
+    "img3":"url(../deathByAi/reponse-ia.png)",
+    "text1":"textetes1",
+    "texte2":"textetes2"
+}

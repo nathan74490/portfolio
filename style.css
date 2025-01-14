@@ -1,0 +1,491 @@
+/***
+		The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+		GitHub page: https://github.com/elad2412/the-new-css-reset
+	***/
+
+/*
+		Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+		- The "symbol *" part is to solve Firefox SVG sprite bug
+	 */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+	cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the  text input doesn't working */
+input,
+textarea {
+	-webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+	-webkit-appearance: revert;
+	appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+	color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+	   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+	display: none;
+}
+
+/* revert for bug in Chromium browsers
+	   - fix for the content editable attribute will work properly.
+	   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
+	-webkit-line-break: after-white-space;
+	-webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+	-webkit-user-drag: element;
+}
+
+
+body {}
+
+#fond {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background: linear-gradient(to bottom left, transparent, #79287E 150%),
+		linear-gradient(to right, transparent, #0F72BA 150%),
+		url("image/nathan1.png");
+	background-size: contain;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	z-index: -1;
+}
+
+#home {
+	display: flex;
+	flex-direction: column;
+	/* background: linear-gradient(to bottom left, transparent, #79287E 150%),
+		linear-gradient(to right, transparent, #0F72BA 150%); */
+	/* height: 100vh; */
+
+}
+h2{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 48px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+h3{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 40px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+h4{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 32px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+p{
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 24px;
+}
+
+/*------------------------------------------------------------------------------  header  -------------------------------------------------------------------------------------------*/
+header {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	top: 42px;
+	left: 110px;
+	height: 65px;
+	width: 90%;
+	justify-content: space-between;
+	/* background-color: grey; */
+}
+
+#home_button {
+	display: flex;
+	flex-direction: row;
+	width: 30%;
+	justify-content: space-between;
+	right: 110px;
+	/* background-color: grey; */
+}
+
+.logo {
+	height: 60px;
+	width: 88px;
+	background-image: url("image/logo.png");
+}
+
+.button_creation {
+	position: relative;
+	top: 25%;
+	width: 158px;
+	height: 48px;
+	background-image: url(image/button_creation_default.png);
+}
+.button_creation:hover{
+	background-image: url(image/button_creation_hover.png);
+}
+
+.button_contact {
+	position: relative;
+	top: 25%;
+	width: 153px;
+	height: 48px;
+	background-image: url(image/button_contact_default.png);
+}
+.button_contact:hover{
+	background-image: url(image/button_contact_hover.png);
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#info_home {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	top: 20%;
+	height: 70vh;
+	justify-content: space-between;
+	margin-top: 20vh;
+	margin-bottom: 3vh;
+	
+}
+
+#info_Name {
+	display: flex;
+	flex-direction: row;
+	/* width: 80vw; */
+	justify-content: space-between;
+}
+
+#info_work {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	right: 10px;
+}
+/* #info_home_bottom{
+	background: linear-gradient(to right, transparent, #79287E 150%),
+		linear-gradient(to bottom left , transparent, #0F72BA 150%);
+	background-color: black;
+	height: 300vh;
+} */
+#info_home_bottom {
+    background: linear-gradient(to right, transparent, #79287E 150%),
+        linear-gradient(to bottom left, transparent, #0F72BA 150%);
+    background-color: black;
+    padding: 2rem; /* Ajoute de l'espace intérieur */
+    display: flex;
+    flex-direction: column; /* Dispose les enfants verticalement */
+    gap: 2rem; /* Espacement entre les blocs */
+}
+
+
+/*------------------------------------------------------------------------------- BOUDET --------------------------------------------------------------------------------------------*/
+
+
+#lastName {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	left: 10vw;
+	width: 25vw;
+
+}
+
+#nom_reverse {
+	-webkit-text-stroke: 2px rgba(217, 217, 217, 1);
+	color: #521c55;
+	transform: scale(1, -1);
+
+
+}
+
+h1 {
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 96px;
+	text-shadow: 2px 3px 4px rgba(248, 0, 107, 0.96);
+	color: rgba(217, 217, 217, 1);
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------- NATHAN --------------------------------------------------------------------------------------------*/
+
+
+#Name {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	right: 110px;
+	width: 25vw;
+
+}
+
+#name_reverse {
+	-webkit-text-stroke: 2px rgba(217, 217, 217, 1);
+	color: #05395e;
+	transform: scale(1, -1);
+
+
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------- work --------------------------------------------------------------------------------------------*/
+
+#Work {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	right: 110px;
+	
+
+}
+
+#work {
+	
+
+}
+
+.trispace-work {
+	font-family: "Trispace", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------A PROPOS--------------------------------------------------------------------------------*/
+/* #moi{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	margin-top: 3vh;
+	justify-content: center;
+} */
+#moi {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet de s'adapter à l'espace disponible */
+    margin-bottom: 2rem; /* Ajoute un espace après le bloc */
+}
+#blockInfo{
+	height: 426px;
+	width: 990px;
+	background: linear-gradient(to left, transparent, #79287E 200%),
+		linear-gradient(to bottom right  , transparent, #0F72BA 200%);
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 15px;
+}
+#imageMoi{
+	height: 80%;
+	width: 30%;
+	background-color: black;
+}
+#texteMoi_button{
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+#texteMoi{
+	height: 252px;
+	width: 634px;
+	color: white;
+	font-size: 24px;
+}
+#buttonCv{
+	width: 138px;
+	height: 52px;
+	background-image: url(image/buttonCV.png);
+	align-self: flex-end;
+}
+#buttonCv:hover{
+	background-image: url(image/buttonCV2.png);
+}
+
+
+/*---------------------------------------------------------------------------------mes creation--------------------------------------------------------------------------------*/
+
+/* #mesCreation{
+	margin-top: 10vh;
+	height: 80vh;
+	width: 90vw;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+} */
+#mesCreation {
+    margin: 0 auto; /* Centrer horizontalement */
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#titleMesCrea{
+	align-self: flex-start;
+	position: relative;
+	left: -10vh;
+}
+#projets{
+	margin-top: 20vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 70vw;
+	height: auto;
+
+}
+.prj{
+	margin-right: 4.5vw;
+	margin-left: 4.5vw;
+	margin-bottom: 13vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 452px;
+	width: 440px;
+}
+.img_prj{
+	max-width: 429px;
+	max-height: 396px;
+	-webkit-filter: grayscale(1);
+}
+.img_prj:hover{
+	-webkit-filter: grayscale(0);
+}
+
+/*---------------------------------------------------------------------------------footer--------------------------------------------------------------------------------*/
+
+footer{
+	height: 259px;
+	background-color: rgba(60, 60, 60);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+#info_footer{
+	position: relative;
+	left: 5vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	color: white;
+}
+#logo_footer{
+	
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 30vw;
+}
+#logoLinkedin{
+	margin-left:3vw;
+	height: 72px;
+	width: 72px;
+	background-image: url(image/logo_linkedin_default.png);
+}
+#logoMail{
+	margin-left:3vw;
+	height: 72px;
+	width: 72px;
+	background-image: url(image/logo_mail_default.png);
+}
+#logoLinkedin:hover{
+	background-image: url(image/logo_linkedin_hover.png);
+}
+#logoMail:hover{
+	background-image: url(image/logo_mail_hover.png);
+}
+
+
+
+
+
+
+
+
